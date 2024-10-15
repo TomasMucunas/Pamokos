@@ -6,25 +6,25 @@
   }
   
   .container {
-    display: flex; /* Используем flexbox для размещения элементов */
-    gap: 20px; /* Пробелы между элементами */
+    display: flex; 
+    gap: 20px; 
   }
   
   .white-dog {
-    flex: 1; /* Занимает 1 часть пространства */
+    flex: 1; 
   }
   
   .images-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Сетка для картинок 2x2 */
-    flex: 1; /* Занимает 1 часть пространства */
+    grid-template-columns: repeat(2, 1fr); 
+    flex: 1; 
     min-height: 50%;
   }
   
   .images-grid img {
-    width: 100%; /* Картинки занимают 100% от колонки */
+    width: 100%; 
   }
   
   .white-dog img {
-    width: 100%; /* Собаки занимают 100% от колонки */
+    width: 100%; 
   }
