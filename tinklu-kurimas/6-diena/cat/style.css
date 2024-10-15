@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+  width: 100%;
+}
+
+.text {
+  margin-top: 7cm;
+  font-size: 1cm;
+  margin-left: 1cm;
+}
+
+.left {
+  font-size: 1cm;
+  margin-top: 10cm;
+  margin-left: 2cm;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
