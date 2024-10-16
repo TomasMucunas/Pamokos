@@ -72,7 +72,7 @@
   .green-square {
     width: 1000px;  
     height: 600px;  
-    border: 5px solid green;
+    border: 5px dotted green;
     aspect-ratio: 1000;
     position: relative;
     display: flex;
