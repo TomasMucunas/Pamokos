@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(36, 34, 38); 
+    padding: 20px 30px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+.buttons {
+    position: relative;
+}
+
+.buttons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.buttons li {
+    margin-left: 20px;
+}
+
+.buttons a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.buttons a:hover {
+    color: #ffffff;
+    background-color: rgb(53, 52, 58);
+}
+
+.buttons li:first-child {
+    margin-left: 0;
+}
+
+.search-item {
+    margin-left: 20px;
+}
+
+.search-ico {
+    max-width: 14px;
+    height: auto;
+    cursor: pointer;
+}
+
+.wordpress {
+    width: 573px; 
+    height: 244px; 
+    background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    border-radius: 5px; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    overflow: hidden; 
+    padding: 15px; 
+}
+
+.wordpress h1, .wordpress p {
+    margin: 0; 
+}
+
+.wordpress p {
+    margin-top: 5px; 
+}
+
+.wordpress h1 {
+    flex-grow: 1; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+}
+
+.firstworldpass {
+    text-align: left; 
+    flex-grow: 1; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    display: flex;
+}
+
+.read-more {
+    display: block; 
+    text-align: left; 
+    color: white; 
+    background-color: rgb(36, 34, 38); 
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+    margin-top: auto; 
+    max-width: 3cm;
+}
+
+.read-more:hover {
+    background-color: rgb(53, 52, 58); 
+}
