@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pets</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo"><strong>Petlover</strong></div>
+      <nav class="nav">
+        <ul class="navbar-menu">
+          <li><a href="#AllPets">All Pets</a></li>
+          <li><a href="#Dogs">Dogs</a></li>
+          <li><a href="#Cats">Cats</a></li>
+          <li><a href="#Rabbits">Rabbits</a></li>
+          <li><a href="#Birds">Birds</a></li>
+        </ul>
+      </nav>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <main>
+      <article>
+        <figure>
+          <img src="dogs.jpg.png" alt="Šuo uostydamas žurnalą" />
+        </figure>
+      </article>
+    </main>
+    <section class="adoption-section">
+      <h2>Dogs available for adoption near you</h2>
+      <div class="dog-grid">
+        <div class="dog-card">
+          <img src="stella.png" alt="Stella" />
+          <h3>Stella</h3>
+          <p><strong>Breed:</strong> Boxer</p>
+          <p><strong>Color:</strong> Tan</p>
+          <p><strong>Gender:</strong> Female</p>
+        </div>
+        <div class="dog-card">
+          <img src="scout.jpg" alt="Scout" />
+          <h3>Scout</h3>
+          <p><strong>Breed:</strong> German Shepard</p>
+          <p><strong>Color:</strong> Tan</p>
+          <p><strong>Gender:</strong> Male</p>
+        </div>
+        <div class="dog-card">
+          <img src="zelda.jpg" alt="Zelda" />
+          <h3>Zelda</h3>
+          <p><strong>Breed:</strong> Terrier</p>
+          <p><strong>Color:</strong> Brown</p>
+          <p><strong>Gender:</strong> Female</p>
+        </div>
+        <div class="dog-card">
+          <img src="snowflake.jpg" alt="Snowflake" />
+          <h3>Snowflake</h3>
+          <p><strong>Breed:</strong> Husky</p>
+          <p><strong>Color:</strong> White</p>
+          <p><strong>Gender:</strong> Female</p>
+        </div>
+        <div class="dog-card">
+          <img src="rupert.jpg" alt="Rupert" />
+          <h3>Rupert</h3>
+          <p><strong>Breed:</strong> Dachshund</p>
+          <p><strong>Color:</strong> Black</p>
+          <p><strong>Gender:</strong> Male</p>
+        </div>
+      </div>
+    </section>
+    <!-- JavaScipt paguglinau -->
+    <script>
+      document.querySelector(".burger").addEventListener("click", function () {
+        this.classList.toggle("active");
+        document.querySelector(".nav").classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
