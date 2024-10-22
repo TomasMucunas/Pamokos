@@ -1,0 +1,64 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 10px solid rgba(0, 0, 0, 0.397);
+}
+
+.flex-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 10px; */
+}
+
+input[type="search"], input[type="date"], select {
+  width: 300px;
+  padding: 17px;
+  border: 1px solid #00000070;
+}
+input[type="date"]{
+  width: 10%;
+  padding: 17px;
+}
+.random {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #00000070;
+}
+select {
+  width: 25%;
+}
+input[type="submit"] {
+  background-color: #ff5b5b;
+  color: white;
+  border: none;
+  padding: 17px 5px;
+  /* border-radius: 5px; */
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #ff3a3a;
+}
+
+video.dog {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  filter: blur(5px);
+}
