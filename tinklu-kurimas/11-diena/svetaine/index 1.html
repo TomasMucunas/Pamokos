@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <button class="menu-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <nav class="sidebar">
+      <h1>Hideo</h1>
+      <a href="#"><b>Architecture⁴</b></a>
+      <a href="#"><b>Digital Design²</b></a>
+      <a href="#"><b>Identities³</b></a>
+      <a href="#"><b>News¹</b></a>
+      <a class="about" href="#"><b>About Hideo</b></a>
+      <a href="#"><b>Download</b></a>
+    </nav>
+    <div class="stylish">
+      <h2>A Stylish Blog Theme</h2>
+    </div>
+  </header>
+  
+  <main>
+    <section class="grid-container">
+      <article>
+        <img src="setas de sevilla.png" alt="Setas de Sevilla">
+        <p>Setas de Sevilla</p>
+      </article>
+      <article>
+        <img src="concreate stairs.png" alt="Concrete Stairs">
+        <p>Concrete Stairs</p>
+      </article>
+      <article>
+        <img src="hyogo prefectural museum of art.png" alt="Hyogo Prefectural Museum of Art">
+        <p>Hyogo Prefectural Museum of Art</p>
+      </article>
+      <article>
+        <img src="koba maritime museum.png" alt="Kobe Maritime Museum">
+        <p>Kobe Maritime Museum</p>
+      </article>
+      <article>
+        <img src="the old vic.png" alt="The Old Vic">
+        <p>The Old Vic</p>
+      </article>
+      <article>
+        <img src="graphcore.png" alt="Graphcore">
+        <p>Graphcore</p>
+      </article>
+    </section>
+    
+    <hr>
+    <div class="number-list">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">-></a>
+    </div>
+    <hr class="hr">
+  </main>
+
+  <footer>
+    <section class="about">
+      <h1>About Hideo</h1>
+      <p>Hideo is a clean portfolio and blog theme with bold headings and <br>subdued colors. You can get it for free from WordPress.org.</p>
+      <button>Read More</button>
+      <button>Download</button>
+    </section>
+    <hr>
+    <div class="down">
+      <p>&copy; 2023 Hideo</p>
+      <p style="color: #818181;">Theme by <span style="text-decoration: underline; color: #818181;">Anders Noren</span></p>
+    </div>
+  </footer>
+<!-- JS jutube radau -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
