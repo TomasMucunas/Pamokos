@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .progress-custom {
+            height: 5px;
+            border-radius: 5px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            margin-right: 5px;
+            border-radius: 12px;
+            font-size: 0.8em;
+        }
+        .tag.dev {
+            background-color: #0051ff;
+            color: #00796b;
+        }
+        .tag.qa {
+            background-color: #ff0026;
+            color: #ffffff;
+        }
+        .tag.design {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        .tag.marketing {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">Task Details</h2>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col"><b>Task Name</b></th>
+                    <th scope="col"><b>Due Date</b></th>
+                    <th scope="col"><b>Progress</b></th>
+                    <th scope="col"><b>Action</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ecommerce website</td>
+                    <td>2018-01-20</td>
+                    <td>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" style="width: 50%; background-color: #28a745;"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="tag dev"><img src="pencil.svg" alt=""></span>
+                        <span class="tag qa"><img src="trash3.svg" alt=""></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Android App</td>
+                    <td>2018-09-11</td>
+                    <td>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" style="width: 10%; background-color: #0051ff;"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="tag design"><img src="pencil.svg" alt=""></span>
+                        <span class="tag marketing"><img src="trash3.svg" alt=""></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Logo design</td>
+                    <td>2018-04-12</td>
+                    <td>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" style="width: 40%; background-color: #8c00ff;"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="tag design"><img src="pencil.svg" alt=""></span>
+                        <span class="tag marketing"><img src="trash3.svg" alt=""></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Java Project</td>
+                    <td>2018-01-20</td>
+                    <td>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" style="width: 30%; background-color: #008b23;"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="tag design"><img src="pencil.svg" alt=""></span>
+                        <span class="tag marketing"><img src="trash3.svg" alt=""></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
