@@ -23,12 +23,18 @@
 //     parseInt(prompt("Penktadienio pamokų skaičius:")) || 0,
 // ];
 
-const tunelioIlgis = 264; 
-const greitisKmH = parseFloat(prompt("Koks automobilio greitis (km/h)?")); 
 
-const greitisMSS = greitisKmH * 1000 / 3600;
+var a = parseInt(prompt("Sienos ilgis:"));
+var h = parseInt(prompt("Sienos aukstis:"));
+var k = parseFloat(prompt("Plytos kaina:"));
 
+var plytosIlgisM = 0.2;
+var plytosAukštisM = 0.1;
 
-const laikasSekundemis = tunelioIlgis / greitisMSS;
+var sienaPlotas = a * h;
+var plytosPlotas = plytosIlgisM * plytosAukštisM;
 
-alert(`Automobilis tunelį pravažiuos per ${laikasSekundemis.toFixed(2)} s`);
+var plytųKiekis = Math.ceil(sienaPlotas / plytosPlotas);
+var bendrosPlytųKainos = plytųKiekis * k;
+
+alert(`Plytų kiekis: ${plytųKiekis}\nPlytos kainuos: ${bendrosPlytųKainos.toFixed(2)} Lt`);
