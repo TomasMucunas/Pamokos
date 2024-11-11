@@ -1,0 +1,410 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.logo h3 {
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style: none;
+  color: white;
+  display: flex;
+}
+
+.nav ul li {
+  margin: 0 15px;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+.next-page {
+  width: 100%;
+}
+
+@media (max-width: 350px) {
+  .navbar {
+    padding-top: 30px;
+    padding-left: 20px;
+    background-color: rgb(39, 43, 65);
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: rgb(39, 43, 65);
+    width: 100%;
+    z-index: 100;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav ul {
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1cm;
+    font-size: 0.8cm;
+  }
+
+  .text p {
+    font-size: 1cm;
+    margin: 0;
+    padding: 0;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  .text2 {
+    font-size: 0.8rem;
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  .buttons .btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .buttons {
+    width: 90%;
+  }
+
+  .img {
+    position: relative;
+    display: inline-block;
+  }
+
+  .img img {
+    display: block;
+    width: 220%;
+    height: auto;
+  }
+
+  .img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.651);
+    z-index: 1;
+  }
+
+  .text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.5cm;
+    text-align: center;
+    z-index: 2;
+    width: 80%;
+  }
+
+  .text2 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    width: 70%;
+    font-size: 0.54cm;
+  }
+
+  .buttons {
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    max-width: 4cm;
+  }
+
+  .btn,
+  .btn1 {
+    padding: 0.2cm;
+    color: white;
+    background-color: rgb(73, 164, 237);
+    border-radius: 25px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 0.5cm;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  .btn:hover,
+  .btn1:hover {
+    background-color: transparent;
+    color: rgb(73, 164, 237);
+    border: 2px solid rgb(73, 164, 237);
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  .next-page1 {
+    background-color: rgb(39, 43, 65);
+    width: 371px;
+    height: 844px;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto 0;
+    padding: 1cm;
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+
+  .box img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 2.5cm;
+  }
+
+  .box p {
+    margin-top: 0.3cm;
+    color: white;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  .next-page2 {
+    background-color: rgb(150, 193, 240);
+    width: 371px;
+    height: 110%;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 2cm;
+    border-radius: 10px;
+    max-width: 600px;
+  }
+
+  .top h1 {
+    margin-bottom: 10px;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  .top p {
+    margin: 0;
+    color: white;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  .table1 {
+    margin-top: 1.5cm;
+    margin-left: 1.2cm;
+    background-color: white;
+    width: 7cm;
+    padding: 1cm;
+  }
+
+  .table1 img {
+    margin-top: 0.5cm;
+  }
+
+  .table1 h3 {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  .table1 p {
+    margin-top: 0.2cm;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 13px;
+  }
+
+  .next-page3 {
+    position: relative;
+    max-height: 1000px;
+  }
+
+  .center {
+    display: block;
+    position: relative;
+    z-index: 1;
+    height: 220%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(253, 253, 253, 0.65);
+    z-index: 2;
+  }
+
+  .appointment-form {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-68%);
+    width: 250px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .appointment-form h2 {
+    font-size: 16px;
+    color: #000000;
+    text-align: left;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  .appointment-form h1 {
+    text-align: left;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+  .appointment-form input,
+  .appointment-form select,
+  .appointment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(195, 195, 195);
+    border-radius: 4px;
+  }
+
+  .appointment-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(73, 164, 237);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .appointment-form button:hover {
+    background-color: #45a04900;
+  }
+
+  .next-page4 {
+    padding: 1cm;
+    padding-left: 2cm;
+  }
+
+  .next-page4 p {
+    margin-top: 0.3cm;
+  }
+
+  .next-page4 button {
+    margin-top: 1.5cm;
+    padding: 0.4cm;
+    padding-left: 1cm;
+    padding-right: 1cm;
+    background-color: rgb(73, 164, 237);
+    border-color: #ffffff00;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .last-page5 {
+    height: 5cm;
+    background-color: rgb(39, 43, 65);
+    padding: 1.6cm;
+    text-align: center;
+  }
+
+  .inside p {
+    color: white;
+    width: 6cm;
+  }
+
+  .inside img {
+    margin-top: 1cm;
+  }
+
+}
