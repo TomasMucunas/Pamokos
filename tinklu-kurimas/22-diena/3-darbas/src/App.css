@@ -1,0 +1,18 @@
+.container {
+  margin-top: 3rem;
+  max-width: 15cm;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.btn-danger {
+  background-color: red;
+  color: white;
+}
+
+.btn-success {
+  background-color: green;
+  color: white;
+}

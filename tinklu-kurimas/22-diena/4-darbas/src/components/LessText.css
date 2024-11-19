@@ -1,0 +1,11 @@
+.read-toggle {
+    color: blue;
+    cursor: pointer;
+    margin-left: 5px;
+    text-decoration: underline;
+  }
+  
+  .read-toggle:hover {
+    color: darkblue;
+  }
+  
