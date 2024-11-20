@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "content": "Aš mokausi HTML.",
+    "img": "https://png.pngtree.com/png-vector/20221211/ourmid/pngtree-css-and-html-code-xml-script-design-vector-png-image_7600588.jpg",
+    "status": false
+  },
+  {
+    "id": 2,
+    "content": "Aš mokausi CSS.",
+    "img": "https://i0.wp.com/artisansweb.net/wp-content/uploads/2019/07/css-code.png?ssl=1",
+    "status": false
+  },
+  {
+    "id": 3,
+    "content": "Aš mokausi JavaScript.",
+    "img": "https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/3X/5/e/5ea0101ae333cb420ca982ff6a5ac2dd3493c0cd.png",
+    "status": false
+  }
+]
