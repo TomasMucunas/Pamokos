@@ -1,0 +1,7 @@
+li {
+display: flex;
+list-style: none;
+display: inline;
+padding-left: 1cm;
+font-size: 1cm;
+}
