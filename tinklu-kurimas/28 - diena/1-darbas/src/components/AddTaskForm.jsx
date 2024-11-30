@@ -11,7 +11,7 @@ function AddTaskForm({ onAddTask }) {
     const newTask = { id: Date.now(), ...data };
     onAddTask(newTask);
     alert("Task successfully added!");
-    reset(); // Clear the form
+    reset();
     navigate("/tasks");
   };
 
