@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr );
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.user-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.user-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.user-card a {
+  display: inline-block;
+  background-color: #6d757c;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.user-card a:hover {
+  background-color: #555;
+}
