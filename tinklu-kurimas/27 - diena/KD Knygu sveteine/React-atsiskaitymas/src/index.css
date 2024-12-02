@@ -1,0 +1,29 @@
+* {
+  background-color: rgb(201, 250, 253);
+}
+
+nav li{
+  display: inline-block;
+  list-style: none; 
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+nav li a {
+  text-decoration: none;
+  padding-left: 1cm;
+  font-size: 0.7cm;
+  list-style-type: none;
+}
+
+nav {
+  max-width: 0;
+}
+
+ul {
+  list-style-type: none;
+}

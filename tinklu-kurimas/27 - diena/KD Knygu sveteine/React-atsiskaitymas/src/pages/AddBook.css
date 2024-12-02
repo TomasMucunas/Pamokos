@@ -1,0 +1,41 @@
+.input {
+  padding: 0.3cm;
+  border-radius: 10px;
+  border: 3px solid #009ece;
+  max-width: 3cm;
+  text-align: center;
+}
+
+.input2 {
+  padding: 0.3cm;
+  border-radius: 10px;
+  border: 3px solid #009ece;
+  width: 6.7cm;
+  max-width: 10cm;
+  text-align: center;
+}
+
+.add {
+  padding: 0.3cm;
+  border-radius: 10px;
+  border: 3px solid #009ece;
+  width: 6cm;
+  max-width: 10cm;
+  text-align: center;
+  margin-left: 0.7cm;
+}
+
+.add:hover {
+  padding: 0.3cm;
+  border-radius: 10px;
+  border: 3px solid #004d64;
+  width: 6cm;
+  max-width: 10cm;
+  text-align: center;
+  margin-left: 0.7cm;
+  background-color: #00ff88;
+}
+
+h1 {
+  margin-left: 40px;
+}

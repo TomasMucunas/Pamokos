@@ -1,0 +1,243 @@
+сделай код по тупому но чтоб работало, как сейчас - 
+AddBook.jsx - 
+import React, { useState } from "react";
+import "./AddBook.css";
+
+function AddBook({ books, setBooks }) {
+  const [form, setForm] = useState({
+    title: "",
+    author: "",
+    category: "",
+    price: "",
+    cover: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      !form.title ||
+      !form.author ||
+      !form.category ||
+      !form.price ||
+      !form.cover
+    ) {
+      alert("Visi laukai privalomi!");
+      return;
+    }
+
+    if (form.price <= 0) {
+      alert("Kaina turi būti didesnė nei 0!");
+      return;
+    }
+
+    const urlRegex =
+      /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w.-]*)*\/?$/;
+    if (!urlRegex.test(form.cover)) {
+      alert("Neteisingas paveikslėlio URL!");
+      return;
+    }
+
+    const newBook = {
+      id: books.length + 1,
+      ...form,
+      reserved: false,
+    };
+
+    setBooks((prevBooks) => [...prevBooks, newBook]);
+    alert("Knyga pridėta!");
+    setForm({
+      title: "",
+      author: "",
+      category: "",
+      price: "",
+      cover: "",
+    });
+  };
+
+  return (
+    <div>
+      <h1>Pridėti knygą</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="input"
+          type="text"
+          name="title"
+          placeholder="Book Name"
+          value={form.title}
+          onChange={handleChange}
+        />
+        <input
+          className="input"
+          type="text"
+          name="author"
+          placeholder="Author"
+          value={form.author}
+          onChange={handleChange}
+        />
+        <select
+          name="category"
+          value={form.category}
+          onChange={handleChange}
+          className="input"
+        >
+          <option value="">Pasirinkti kategoriją</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Horrors">Horror</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Non-Fiction">Non-Fiction</option>
+          <option value="Science">Science</option>
+          <option value="History">History</option>
+        </select>
+        <input
+          className="input"
+          type="number"
+          name="price"
+          placeholder="Price"
+          value={form.price}
+          onChange={handleChange}
+        />
+        <input
+          className="input2"
+          type="url"
+          name="cover"
+          placeholder="Cover Image URL"
+          value={form.cover}
+          onChange={handleChange}
+        />
+        <button className="add" type="submit">
+          Pridėti
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default AddBook;
+
+
+EditBook.jsx - 
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+function EditBook({ books, setBooks }) {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const bookToEdit = books.find((book) => book.id === parseInt(id));
+
+  if (!bookToEdit) return <h1>Knyga nerasta!</h1>;
+
+  const [form, setForm] = useState({ ...bookToEdit });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setBooks((prevBooks) =>
+      prevBooks.map((book) => (book.id === parseInt(id) ? { ...form } : book))
+    );
+    navigate("/");
+  };
+
+  return (
+    <div>
+      <h1>Redaguoti knygą</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          placeholder="Book Name"
+          value={form.title}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Author"
+          value={form.author}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="category"
+          placeholder="Category"
+          value={form.category}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="price"
+          placeholder="Price"
+          value={form.price}
+          onChange={handleChange}
+        />
+        <input
+          type="url"
+          name="cover"
+          placeholder="Cover URL"
+          value={form.cover}
+          onChange={handleChange}
+        />
+        <button type="submit">Išsaugoti</button>
+        <button type="button" onClick={() => navigate("/")}>
+          Atšaukti
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default EditBook;
+
+
+HomePage.jsx - 
+import { Link } from "react-router-dom";
+
+function HomePage({ books, setBooks }) {
+  const toggleReserved = (bookId) => {
+    setBooks((prevBooks) =>
+      prevBooks.map((book) =>
+        book.id === bookId
+          ? { ...book, reserved: !book.reserved }
+          : book
+      )
+    );
+  };
+
+  return (
+    <div>
+      <h1>Knygų sąrašas</h1>
+      {books.length === 0 ? (
+        <p>Sąrašas tuščias. Pridėkite knygų!</p>
+      ) : (
+        <ul className="book-list">
+          {books.map((book) => (
+            <li key={book.id} className="book-item">
+              <img src={book.cover} alt={book.title} />
+              <h2>{book.title}</h2>
+              <p>Autorius: {book.author}</p>
+              <button onClick={() => toggleReserved(book.id)}>
+                {book.reserved ? "Grąžinti" : "Išduoti"}
+              </button>
+              <Link to={`/edit-book/${book.id}`}>
+                <button>Redaguoti</button>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default HomePage;
