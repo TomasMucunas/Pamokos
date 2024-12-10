@@ -48,6 +48,12 @@ const cards = [
     title: "Community of Ours",
     details: "2018 • 📺TV Series • 18+",
   },
+
+  {
+    image: undiscovered,
+    title: "Undiscovered Cities",
+    details: "2019 • 📺TV Series • E"
+  },
   {
     image: puls,
     title: "112",
@@ -83,6 +89,8 @@ const cards = [
     title: "During The Hunt",
     details: "2018 • 📺TV Series • 18+",
   },
+
+
 ];
 
 const CardContainer = () => {

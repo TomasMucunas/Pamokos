@@ -14,6 +14,12 @@ const Card = ({ image, title, details }) => {
     <div className="show-card">
       <div className="show-card-image">
         <img src={image} alt={title} className="show-card-img" />
+        <div className="play-overlay">
+          <button className="play-button">
+            <div className="play-icon"></div>
+            <span className="play-text">Play</span>
+          </button>
+        </div>
       </div>
       <div className="show-card-content">
         <p className="show-card-details">{details}</p>
