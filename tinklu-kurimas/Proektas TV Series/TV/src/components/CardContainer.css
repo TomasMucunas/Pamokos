@@ -1,40 +1,72 @@
 .tv-series-container {
-    padding: 20px;
-    background-color: #161d2f;
-    color: #fff;
-    font-family: "Outfit", sans-serif;
-    text-align: left;
-  }
-  
-  .tv-series-title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    font-family: 'Outfit', sans-serif;
-  }
-  
+  background-color: #11141e;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  text-align: left;
+  padding: 10px; 
+}
+
+.tv-series-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px; 
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; 
+}
+
+@media (min-width: 1230px) {
   .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
   }
-  
-  @media (min-width: 1228px) {
-    .card-container {
-      grid-template-columns: repeat(4, 1fr);
-    }
+
+  .tv-series-title {
+    font-size: 28px;
+    line-height: 1.2;
   }
-  
-  @media (min-width: 768px) and (max-width: 930px) {
-    .card-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
+}
+
+@media (max-width: 750px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 164px;
   }
-  
-  @media (max-width: 767px) {
-    .card-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
+
+  .card-container .card {
+    order: unset;
   }
-  
+
+  .tv-series-title {
+    color: var(--Pure-White, #fff);
+    font-family: Outfit;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.312px;
+  }
+
+  .search-ico img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .search-box input {
+    color: var(--Pure-White, #fff);
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.4979;
+  }
+}

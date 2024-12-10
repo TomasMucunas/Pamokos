@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "./SearchBar";
 import Card from "./Card";
 import "./CardContainer.css";
 import darkSide from "../assets/dark-side.jpg";
@@ -47,6 +48,12 @@ const cards = [
     title: "Community of Ours",
     details: "2018 • 📺TV Series • 18+",
   },
+
+  {
+    image: undiscovered,
+    title: "Undiscovered Cities",
+    details: "2019 • 📺TV Series • E"
+  },
   {
     image: puls,
     title: "112",
@@ -82,11 +89,14 @@ const cards = [
     title: "During The Hunt",
     details: "2018 • 📺TV Series • 18+",
   },
+
+
 ];
 
 const CardContainer = () => {
   return (
     <div className="tv-series-container">
+      <SearchBar />
       <h1 className="tv-series-title">TV Series</h1>
       <div className="card-container">
         {cards.map((card, index) => (
