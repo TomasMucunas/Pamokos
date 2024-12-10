@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "./SearchBar";
 import Card from "./Card";
 import "./CardContainer.css";
 import darkSide from "../assets/dark-side.jpg";
@@ -87,6 +88,7 @@ const cards = [
 const CardContainer = () => {
   return (
     <div className="tv-series-container">
+      <SearchBar />
       <h1 className="tv-series-title">TV Series</h1>
       <div className="card-container">
         {cards.map((card, index) => (

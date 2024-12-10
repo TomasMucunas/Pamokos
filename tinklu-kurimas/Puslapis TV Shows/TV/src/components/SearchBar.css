@@ -1,0 +1,77 @@
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 273px;
+    height: 32px;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    background-color: #11141e;
+    border-radius: 4px;
+  }
+  
+  .search-ico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-ico img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .search-txt {
+    width: 213px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: #11141e;
+    color: #fff;
+    padding-left: 10px;
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .search-txt::placeholder {
+    color: #aaa;
+  }
+  
+  
+  @media (min-width: 1230px) {
+    .search-box {
+      width: 273px;
+      height: 32px;
+    }
+  
+    .search-ico img {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .search-txt {
+      width: 213px;
+      height: 30px;
+    }
+  }
+  
+
+  @media (max-width: 750px) {
+    .search-box {
+      width: 220px;
+      height: 28px;
+    }
+  
+    .search-ico img {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .search-txt {
+      width: 180px;
+      height: 26px;
+      font-size: 14px;
+    }
+  }
+  
