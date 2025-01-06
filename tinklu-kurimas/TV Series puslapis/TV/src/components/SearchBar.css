@@ -1,0 +1,87 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 273px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+  background-color: #11141e;
+  border-radius: 4px;
+}
+
+.search-ico {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-ico img {
+  width: 20px;
+  height: 20px;
+}
+
+.search-txt {
+  width: 250px; 
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #11141e;
+  color: #fff;
+  padding-left: 15px; 
+  font-family: "Outfit", sans-serif;
+  font-size: 18px; 
+  border-radius: 6px; 
+  caret-color: #e50914;
+}
+
+.search-txt::placeholder {
+  color: #aaa;
+}
+
+
+.search-txt:focus {
+  border-bottom: 2px solid rgb(93, 105, 142); 
+}
+
+.search-txt::placeholder {
+  color: #aaa;
+  font-size: 24px;
+}
+
+@media (min-width: 1230px) {
+  .search-box {
+    width: 273px;
+    height: 32px;
+  }
+
+  .search-ico img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .search-txt {
+    width: 220px;
+    height: 36px; 
+    font-size: 16px;
+    padding-left: 10px; 
+  }
+}
+
+@media (max-width: 750px) {
+  .search-box {
+    width: 220px;
+    height: 28px;
+  }
+
+  .search-ico img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .search-txt {
+    width: 220px;
+    height: 32px;
+    font-size: 10px; 
+  }
+}
