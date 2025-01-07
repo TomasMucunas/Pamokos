@@ -1,34 +1,34 @@
-# ЛАБОРАТОРНАЯ РАБОТА | JS Vikings
+# LAB | JS Vikings
 
 ![giphy](https://user-images.githubusercontent.com/76580/167318130-3f0e5e19-86bc-4278-aaab-a988febcea3f.gif)
 
 <details>
   <summary>
-   <h2>Учебные цели</h2>
+   <h2>Learning Goals</h2>
   </summary>
 
-Это упражнение позволяет вам попрактиковаться и применить концепции и техники, изученные на занятиях.
+ This exercise allows you to practice and apply the concepts and techniques taught in class. 
 
-После завершения этого упражнения вы сможете:
+  Upon completion of this exercise, you will be able to:
 
-- Определять `class` и использовать его для создания объектов (экземпляров).
-- Создавать подклассы, которые расширяют родительский класс с использованием `extends` и `super()` для наследования свойств и методов.
-- Определять методы класса, которые используют ключевое слово `this` для доступа к свойствам объекта.
-- Добавлять и удалять элементы массива с использованием методов массива (`push`, `pop`, `shift`, `unshift` и `splice`).
-- Перебирать элементы массива с использованием циклов `for` и `forEach`.
-- Передавать значения как аргументы в функции.
-- Использовать ключевое слово `return` для возврата значения из функции.
+  - Define a `class` and use it to create objects (instances).
+  - Create a subclass that extends a parent class using `extends` and `super()` to inherit properties and methods.
+  - Define class methods that use the `this` keyword to access object properties.
+  - Add or remove items from an array using the array methods (`push`, `pop`, `shift`, `unshift`, and `splice`).
+  - Iterate over arrays using the `for` and `forEach` loops.
+  - Pass values as arguments to functions.
+  - Use the `return` keyword to return a value from a function.
 
-<br>
-<hr> 
+  <br>
+  <hr> 
 
 </details>
 
-## Инструкции
+## Instructions
 
-Вы будете работать с файлом `src/viking.js`.
+You will work on the `src/viking.js` file.
 
-Ваша задача — написать правильный код в файле `src/viking.js`. В этом файле вы найдете следующий стартовый код:
+Your task is to write the correct code in the `src/viking.js` file. In this file, you will find the following starter code:
 
 ```javascript
 // Soldier
@@ -44,11 +44,10 @@ class Saxon {}
 class War {}
 ```
 
----
 
-### Итерация 0: 
+### Iteration 0: 
 
-Класс `Soldier` должен принимать два аргумента (здоровье и силу), поэтому необходимо написать корректный код. Давайте сделаем так, чтобы класс `Soldier` принимал два аргумента:
+ Soldier class should receive 2 arguments (health & strength), so we have to write the correct code. Let's make the `Soldier` class receive two arguments:
 
 ```javascript
 // Soldier
@@ -66,115 +65,116 @@ class Saxon {}
 class War {}
 ```
 
----
+<br>
 
-### Итерация 1: Soldier
 
-Измените класс `Soldier` и добавьте два метода: `attack()` и `receiveDamage()`.
+### Iteration 1: Soldier
 
-#### Класс
+Modify the `Soldier` class and add 2 methods to it: `attack()`, and `receiveDamage()`.
 
-- Должен принимать **2 аргумента** (здоровье и сила).
-- Должен принимать **свойство `health`** как **первый аргумент**.
-- Должен принимать **свойство `strength`** как **второй аргумент**.
+#### class
 
-#### Метод `attack()`
+- should receive **2 arguments** (health & strength)
+- should receive the **`health` property** as its **1st argument**
+- should receive the **`strength` property** as its **2nd argument**
 
-- Должен быть функцией.
-- Не должен принимать **аргументов**.
-- Должен возвращать **свойство `strength` объекта `Soldier`**.
+#### `attack()` method
 
-#### Метод `receiveDamage()`
+- should be a function
+- should receive **0 arguments**
+- should return **the `strength` property of the `Soldier`**
 
-- Должен быть функцией.
-- Должен принимать **1 аргумент** (урон).
-- Должен вычитать полученный урон из свойства `health`.
-- **Не должен ничего возвращать.**
+#### `receiveDamage()` method
 
----
+- should be a function
+- should receive **1 argument** (the damage)
+- should remove the received damage from the `health` property
+- **shouldn't return** anything
 
-### Итерация 2: Viking
+<br>
 
-Класс `Viking` — это `Soldier` с дополнительным свойством `name`. У него также есть изменённый метод `receiveDamage()` и новый метод `battleCry()`.
+### Iteration 2: Viking
 
-Измените класс `Viking`, сделайте его наследником `Soldier`, переопределите метод `receiveDamage()` и добавьте новый метод `battleCry()`.
+A `Viking` is a `Soldier` with an additional property, their `name`. They also have a different `receiveDamage()` method and a new method, `battleCry()`.
 
-#### Наследование
+Modify the `Viking` class, have it inherit from `Soldier`, re-implement the `receiveDamage()` method for `Viking`, and add a new `battleCry()` method.
 
-- `Viking` должен **расширять** класс `Soldier`.
+#### inheritance
 
-#### Класс
+- `Viking` should **extend** `Soldier`
 
-- Должен принимать **3 аргумента** (имя, здоровье и сила).
-- Должен принимать **свойство `name`** как **первый аргумент**.
-- Должен принимать **свойство `health`** как **второй аргумент**.
-- Должен принимать **свойство `strength`** как **третий аргумент**.
+#### class
 
-#### Метод `attack()`
+- should receive **3 arguments** (name, health & strength)
+- should receive the **`name` property** as its **1st argument**
+- should receive the **`health` property** as its **2nd argument**
+- should receive the **`strength` property** as its **3rd argument**
 
-(Этот метод должен быть **унаследован** от класса `Soldier`, переопределять его не нужно.)
+#### `attack()` method
 
-- Должен быть функцией.
-- Не должен принимать **аргументов**.
-- Должен возвращать **свойство `strength` объекта `Viking`**.
+(This method should be **inherited** from `Soldier`, no need to re-implement it.)
 
-#### Метод `receiveDamage()`
+- should be a function
+- should receive **0 arguments**
+- should return **the `strength` property of the `Viking`**
 
-Этот метод должен быть **переопределён** для класса `Viking`, так как версия `Viking` должна возвращать другие значения.
+#### `receiveDamage()` method
 
-- Должен быть функцией.
-- Должен принимать **1 аргумент** (урон).
-- Должен вычитать полученный урон из свойства `health`.
-- **Если `Viking` всё ещё жив**, должен возвращать **"NAME получил DAMAGE единиц урона"**.
-- **Если `Viking` погиб**, должен возвращать **"NAME погиб в бою"**.
+This method needs to be **re-implemented** for `Viking` because the `Viking` version needs to have different return values.
 
-#### Метод `battleCry()`
+- should be a function
+- should receive **1 argument** (the damage)
+- should remove the received damage from the `health` property
+- **if the `Viking` is still alive**, it should return **"NAME has received DAMAGE points of damage"**
+- **if the `Viking` dies**, it should return **"NAME has died in act of combat"**
 
-- Должен быть функцией.
-- Не должен принимать **аргументов**.
-- Должен возвращать **"Odin Owns You All!"**.
+#### `battleCry()` method
 
----
+- should be a function
+- should receive **0 arguments**
+- should return **"Odin Owns You All!"**
 
-### Итерация 3: Saxon
+<br>
 
-Класс `Saxon` представляет собой более слабую версию `Soldier`. В отличие от `Viking`, у `Saxon` нет имени. Его метод `receiveDamage()` также будет отличаться от метода `Soldier`.
+### Iteration 3: Saxon
 
-Измените класс `Saxon`, сделайте его наследником `Soldier`, переопределите метод `receiveDamage()`.
+A `Saxon` is a weaker kind of `Soldier`. Unlike a `Viking`, a `Saxon` has no name. Their `receiveDamage()` method will also be different than the original `Soldier` version.
 
-#### Наследование
+Modify the `Saxon`, constructor function, have it inherit from `Soldier` and re-implement the `receiveDamage()` method for `Saxon`.
 
-- `Saxon` должен **расширять** класс `Soldier`.
+#### inheritance
 
-#### Класс
+- `Saxon` should extend `Soldier`
 
-- Конструктор писать не нужно, так как этот класс будет наследовать свойства `health` и `strength` от родительского класса `Soldier`.
+#### class
 
-#### Метод `attack()`
+- You don't have to include a constructor method since this class will inherit perfectly from the parents class, both the health and the strength (it `extends` Soldier class :wink: )
 
-Этот метод должен быть **унаследован** от класса `Soldier`, переопределять его не нужно.
+#### `attack()` method
 
-- Должен быть функцией.
-- Не должен принимать **аргументов**.
-- Должен возвращать **свойство `strength` объекта `Saxon`**.
+This method should be **inherited** from `Soldier`, no need to re-implement it.
 
-#### Метод `receiveDamage()`
+- should be a function
+- should receive **0 arguments**
+- should return **the `strength` property of the `Saxon`**
 
-Этот метод должен быть **переопределён** для класса `Saxon`, так как версия `Saxon` должна возвращать другие значения.
+#### `receiveDamage()` method
 
-- Должен быть функцией.
-- Должен принимать **1 аргумент** (урон).
-- Должен вычитать полученный урон из свойства `health`.
-- **Если `Saxon` всё ещё жив**, должен возвращать **"Saxon получил DAMAGE единиц урона"**.
-- **Если `Saxon` погиб**, должен возвращать **"Saxon погиб в бою"**.
+This method needs to be **re-implemented** for `Saxon` because the `Saxon` version needs to have different return values.
 
----
+- should be a function
+- should receive **1 argument** (the damage)
+- should remove the received damage from the `health` property
+- **if the Saxon is still alive**, it should return **_"A Saxon has received DAMAGE points of damage"_**
+- **if the Saxon dies**, it should return **_"A Saxon has died in combat"_**
 
-### Итерация 4: War
+<br>
 
-Теперь самое интересное: война! Класс `War` позволит вам создать армию `Viking` и армию `Saxon`, чтобы они сражались друг с другом.
+### Iteration 4: War
 
-Измените класс `War` и добавьте 5 методов:
+Now we get to the good stuff: WAR! Our `War` class will allow us to have a `Viking` army and a `Saxon` army that battle each other.
+
+Modify the `War` class and add 5 methods to its `class`:
 
 - `addViking()`
 - `addSaxon()`
@@ -182,56 +182,51 @@ class War {}
 - `saxonAttack()`
 - `showStatus()`
 
-#### Класс
+#### class
 
-Когда мы создаём объект `War`, армии должны быть пустыми. Солдаты добавляются позже.
+When we first create a `War`, the armies should be empty. We will add soldiers to the armies later.
 
-- Должен принимать **0 аргументов**.
-- Должен присваивать пустой массив свойству `vikingArmy`.
-- Должен присваивать пустой массив свойству `saxonArmy`.
+- should receive **0 arguments**
+- should assign an empty array to the **`vikingArmy` property**
+- should assign an empty array to the **`saxonArmy` property**
 
-#### Метод `addViking()`
+#### `addViking()` method
 
-Добавляет одного `Viking` в `vikingArmy`. Если нужна армия из 10 `Viking`, вызовите этот метод 10 раз.
+Adds 1 `Viking` to the `vikingArmy`. If you want a 10 `Viking` army, you need to call this 10 times.
 
-- Должен быть функцией.
-- Должен принимать **1 аргумент** (объект `Viking`).
-- Должен добавлять полученного `Viking` в армию.
-- **Не должен ничего возвращать**.
+- should be a function
+- should receive **1 argument** (a `Viking` object)
+- should add the received `Viking` to the army
+- **shouldn't return** anything
 
-#### Метод `addSaxon()`
+#### `addSaxon()` method
 
-Добавляет одного `Saxon` в `saxonArmy`.
+The `Saxon` version of `addViking()`.
 
-- Должен быть функцией.
-- Должен принимать **1 аргумент** (объект `Saxon`).
-- Должен добавлять полученного `Saxon` в армию.
-- **Не должен ничего возвращать**.
+- should be a function
+- should receive **1 argument** (a `Saxon` object)
+- should add the received `Saxon` to the army
+- **shouldn't return** anything
 
-#### Метод `vikingAttack()`
+#### `vikingAttack()` method
 
-Случайный `Saxon` вызывает свой метод `receiveDamage()` с уроном, равным `strength` случайного `Viking`. Это односторонняя атака.
+A `Saxon` (chosen at random) has their `receiveDamage()` method called with the damage equal to the `strength` of a `Viking` (also chosen at random). This should only perform a single attack and the `Saxon` doesn't get to attack back.
 
-- Должен быть функцией.
-- Не должен принимать **аргументов**.
-- Должен заставить `Saxon` вызвать `receiveDamage()`.
-- Должен удалять погибших `Saxon` из армии.
-- Должен возвращать **результат вызова `receiveDamage()`**.
+- should be a function
+- should receive **0 arguments**
+- should make a `Saxon` `receiveDamage()` equal to the `strength` of a `Viking`
+- should remove dead Saxons from the army
+- should return **result of calling `receiveDamage()` of a `Saxon`** with the `strength` of a `Viking`
 
-#### Метод `saxonAttack()`
+#### `saxonAttack()` method
 
-Случайный `Viking` получает урон от случайного `Saxon`.
+The `Saxon` version of `vikingAttack()`. A `Viking` receives damage equal to the `strength` of a `Saxon`.
 
-- Должен быть функцией.
-- Не должен принимать **аргументов**.
-- Должен заставить `Viking` вызвать `receiveDamage()`.
-- Должен удалять погибших `Viking` из армии.
-- Должен возвращать **результат вызова `receiveDamage()`**.
+- should be a function
+- should receive **0 arguments**
+- should make a `Viking` `receiveDamage()` equal to the `strength` of a `Saxon`
+- should remove dead Vikings from the army
+- should return **result of calling `receiveDamage()` of a `Viking`** with the `strength` of a `Saxon`
 
-#### Метод `showStatus()`
+<br>
 
-Возвращает состояние войны.
-
-- Если армия `Saxon` пуста, возвращает: **"Vikings have won the war of the century!"**.
-- Если армия `Viking` пуста, возвращает: **"Saxons have fought for their lives and survived another day..."**.
-- В противном случае возвращает: **"Vikings and Saxons are still in the thick of battle."**.
