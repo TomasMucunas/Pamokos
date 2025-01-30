@@ -1,0 +1,64 @@
+.navbar {
+    inline-size: 103px;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    block-size: 100vh;
+    position: fixed;
+    border-radius: 0 20px 20px 0;
+  }
+  
+  /* Логотип */
+  .logo-container {
+    background-color: var(--purple);
+    padding: 16px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Нижний блок */
+  .nav-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Увеличили расстояние между элементами */
+    align-items: center;
+    padding: 32px; /* Сделали больше высоту */
+    border-block-start: 1px solid var(--text-secondary);
+  }
+  
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    inline-size: 50px;
+    block-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .theme-toggle:hover {
+    transform: rotate(45deg);
+  }
+  
+  .theme-toggle svg {
+    inline-size: 24px;
+    block-size: 24px;
+    color: var(--text-primary);
+    fill: currentColor;
+  }
+  
+  /* Фон боковой панели */
+  .dark-theme .navbar {
+    background-color: var(--bg-secondary-dark);
+  }
+  
+  .light-theme .navbar {
+    background-color: var(--bg-secondary-light);
+    border-right: 1px solid var(--text-secondary-light);
+  }

@@ -1,0 +1,130 @@
+.invoice-form-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .invoice-form {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    inline-size: 400px;
+    max-inline-size: 90%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .invoice-form h2 {
+    margin-block-end: 1rem;
+    color: var(--text-primary);
+    text-align: center;
+  }
+  
+  .form-section {
+    margin-block-end: 1.5rem;
+  }
+  
+  .form-section h3 {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-block-end: 0.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-block-end: 1rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-block-end: 0.3rem;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 1px solid var(--text-secondary);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--purple);
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 1rem;
+  }
+  
+  .btn-cancel,
+  .btn-save {
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.1s;
+  }
+  
+  .btn-cancel {
+    background-color: var(--draft);
+    color: var(--text-primary);
+    border: none;
+  }
+  
+  .btn-cancel:hover {
+    background-color: rgba(55, 59, 83, 0.8);
+  }
+  
+  .btn-save {
+    background-color: var(--purple);
+    color: white;
+    border: none;
+  }
+  
+  .btn-save:hover {
+    background-color: var(--purple-light);
+  }
+  
+  .btn-cancel:active,
+  .btn-save:active {
+    transform: scale(0.97);
+  }
+  
+  /* 📱 Адаптивность */
+  @media (max-inline-size: 480px) {
+    .invoice-form {
+      inline-size: 90%;
+      padding: 1.5rem;
+    }
+  
+    .btn-cancel,
+    .btn-save {
+      inline-size: 48%;
+    }
+  }
+  

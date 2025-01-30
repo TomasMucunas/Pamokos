@@ -1,0 +1,281 @@
+:root {
+  /* Темные цвета темы */
+  --bg-main-dark: #141625;
+  --bg-secondary-dark: #1e2139;
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #dfe3fa;
+
+  /* Светлые цвета темы */
+  --bg-main-light: #cfcfcf;
+  --bg-secondary-light: #ffffff;
+  --text-primary-light: #0c0e16;
+  --text-secondary-light: #888eb0;
+
+  /* Общие цвета */
+  --purple: #7c5dfa;
+  --purple-light: #9277ff;
+  --paid: #33d69f;
+  --pending: #ff8f00;
+  --draft: #373b53;
+}
+
+/* Тема */
+.dark-theme {
+  --bg-main: var(--bg-main-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+}
+
+.light-theme {
+  --bg-main: var(--bg-main-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "League Spartan", sans-serif;
+}
+
+.layout {
+  min-block-size: 100vh;
+  display: flex;
+}
+
+.navbar {
+  inline-size: 103px;
+  background-color: var(--bg-secondary);
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  block-size: 100vh;
+}
+
+.logo {
+  background-color: var(--purple);
+  padding: 32px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-inline-start: 7rem;
+  min-inline-size: 50cm;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 2rem;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.header-left p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Кнопка фильтра */
+/* Контейнер фильтрации */
+.filter-dropdown {
+  position: relative;
+}
+
+/* Кнопка фильтра */
+.filter-btn {
+  background: none;
+  border: 2px solid var(--text-secondary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-btn:hover {
+  background-color: #53448b;
+}
+
+/* Выпадающий список */
+.filter-options {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Опции в фильтре */
+.filter-option {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+  border-radius: 6px;
+}
+
+/* Стиль выбранного фильтра */
+.filter-option.checked {
+  background-color: var(--purple);
+  color: white;
+  font-weight: bold;
+}
+
+.filter-option:hover {
+  background-color: var(--purple-light);
+}
+
+/* Кнопка создания нового инвойса */
+.new-invoice-btn {
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-invoice-btn:hover {
+  background-color: var(--purple-light);
+}
+
+.new-invoice-btn .plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: var(--purple);
+  border-radius: 50%;
+  inline-size: 24px;
+  block-size: 24px;
+  font-size: 1rem;
+}
+
+
+button {
+  background-color: var(--purple);
+  border: none;
+  border-radius: 24px;
+  color: white;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--purple-light);
+}
+
+.invoices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  inline-size: 100%;
+}
+
+.invoice-item {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto auto;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.invoice-item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: capitalize;
+}
+
+.status-dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+}
+
+.paid {
+  background-color: rgba(51, 214, 159, 0.1);
+  color: var(--paid);
+}
+.paid .status-dot {
+  background-color: var(--paid);
+}
+
+.pending {
+  background-color: rgba(255, 143, 0, 0.1);
+  color: var(--pending);
+}
+.pending .status-dot {
+  background-color: var(--pending);
+}
+
+.draft {
+  background-color: rgba(55, 59, 83, 0.1);
+  color: var(--draft);
+}
+.draft .status-dot {
+  background-color: var(--draft);
+}
