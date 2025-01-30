@@ -1,17 +1,17 @@
 :root {
-  /* Темные цвета темы */
+ 
   --bg-main-dark: #141625;
   --bg-secondary-dark: #1e2139;
   --text-primary-dark: #ffffff;
   --text-secondary-dark: #dfe3fa;
 
-  /* Светлые цвета темы */
+  
   --bg-main-light: #cfcfcf;
   --bg-secondary-light: #ffffff;
   --text-primary-light: #0c0e16;
   --text-secondary-light: #888eb0;
 
-  /* Общие цвета */
+
   --purple: #7c5dfa;
   --purple-light: #9277ff;
   --paid: #33d69f;
@@ -19,7 +19,7 @@
   --draft: #373b53;
 }
 
-/* Тема */
+
 .dark-theme {
   --bg-main: var(--bg-main-dark);
   --bg-secondary: var(--bg-secondary-dark);
@@ -105,13 +105,11 @@ body {
   gap: 1rem;
 }
 
-/* Кнопка фильтра */
-/* Контейнер фильтрации */
 .filter-dropdown {
   position: relative;
 }
 
-/* Кнопка фильтра */
+
 .filter-btn {
   background: none;
   border: 2px solid var(--text-secondary);
@@ -131,7 +129,7 @@ body {
   background-color: #53448b;
 }
 
-/* Выпадающий список */
+
 .filter-options {
   position: absolute;
   top: 110%;
@@ -145,7 +143,7 @@ body {
   z-index: 10;
 }
 
-/* Опции в фильтре */
+
 .filter-option {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
@@ -158,7 +156,7 @@ body {
   border-radius: 6px;
 }
 
-/* Стиль выбранного фильтра */
+
 .filter-option.checked {
   background-color: var(--purple);
   color: white;
@@ -169,7 +167,7 @@ body {
   background-color: var(--purple-light);
 }
 
-/* Кнопка создания нового инвойса */
+
 .new-invoice-btn {
   background-color: var(--purple);
   color: white;

@@ -1,5 +1,5 @@
 const express = require("express");
-const pool = require("./config/db"); // Теперь pool, а не connectDB
+const pool = require("./config/db");
 const cors = require("cors");
 const invoiceRoutes = require("./routes/invoiceRoutes");
 require("dotenv").config();
@@ -12,4 +12,4 @@ app.use(express.json());
 app.use("/api/invoices", invoiceRoutes);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));
+app.listen(PORT, () => console.log(`Serveris veikia per prievadą ${PORT}`));

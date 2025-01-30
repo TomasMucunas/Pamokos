@@ -3,14 +3,14 @@ import "./Navbar.css";
 function Navbar({ toggleTheme, isDarkTheme }) {
   return (
     <nav className="navbar">
-      {/* Логотип */}
+     
       <div className="logo-container">
         <div className="logo">
           <img src="./images/logo.png" alt="" />          
         </div>
       </div>
 
-      {/* Нижний блок (переключатель темы + аватар) */}
+  
       <div className="nav-bottom">
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Switch theme">
           {isDarkTheme ? "🌙" : "☀️"}

@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     fetchInvoices()
       .then(setInvoices)
-      .catch(() => setError("Ошибка загрузки данных"));
+      .catch(() => setError("Duomenų įkėlimo klaida"));
   }, []);
 
   const filteredInvoices =
@@ -37,7 +37,7 @@ function App() {
       setInvoices([...invoices, addedInvoice]);
       setShowForm(false);
     } catch {
-      setError("Ошибка при добавлении инвойса");
+      setError("Klaida pridedant sąskaitą faktūrą");
     }
   };
 
@@ -50,17 +50,17 @@ function App() {
       setShowForm(false);
       setSelectedInvoice(null);
     } catch {
-      setError("Ошибка при обновлении инвойса");
+      setError("Klaida atnaujinant sąskaitą faktūrą");
     }
   };
 
   const handleDeleteInvoice = async (id) => {
-    if (!window.confirm("Вы уверены, что хотите удалить этот инвойс?")) return;
+    if (!window.confirm("Ar tikrai norite ištrinti šią sąskaitą faktūrą?")) return;
     try {
       await deleteInvoice(id);
       setInvoices(invoices.filter((invoice) => invoice.id !== id));
     } catch {
-      setError("Ошибка при удалении инвойса");
+      setError("Klaida šalinant sąskaitą faktūrą");
     }
   };
 
@@ -106,8 +106,6 @@ function App() {
                 </div>
               )}
             </div>
-
-            {/* 🔥 Вернул кнопку добавления счета */}
             <button
               className="new-invoice-btn"
               onClick={() => setShowForm(true)}

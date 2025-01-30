@@ -115,7 +115,6 @@
     transform: scale(0.97);
   }
   
-  /* 📱 Адаптивность */
   @media (max-inline-size: 480px) {
     .invoice-form {
       inline-size: 90%;

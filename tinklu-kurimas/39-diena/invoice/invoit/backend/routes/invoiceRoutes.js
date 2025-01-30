@@ -1,21 +1,21 @@
 const express = require("express");
-const pool = require("../config/db"); // Подключение к базе PostgreSQL
+const pool = require("../config/db"); 
 
 
 const router = express.Router();
 
-// Получить все счета
+
 router.get("/", async (req, res) => {
   try {
     const { rows } = await pool.query("SELECT * FROM invoices");
     res.json(rows);
   } catch (error) {
-    console.error("Ошибка сервера:", error);
-    res.status(500).json({ message: "Ошибка сервера", error: error.message });
+    console.error("Serverio klaida:", error);
+    res.status(500).json({ message: "Serverio klaida", error: error.message });
   }
 });
 
-// Добавить новый счёт
+
 router.post("/", async (req, res) => {
   try {
     const { due_date, client, amount, status } = req.body;
@@ -25,12 +25,12 @@ router.post("/", async (req, res) => {
     );
     res.status(201).json(rows[0]);
   } catch (error) {
-    console.error("Ошибка при добавлении счёта:", error);
-    res.status(500).json({ message: "Ошибка при добавлении счёта", error: error.message });
+    console.error("Klaida pridedant paskyrą:", error);
+    res.status(500).json({ message: "Klaida pridedant paskyrą", error: error.message });
   }
 });
 
-// Обновить счёт
+
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -41,20 +41,20 @@ router.put("/:id", async (req, res) => {
     );
     res.json(rows[0]);
   } catch (error) {
-    console.error("Ошибка при обновлении счёта:", error);
-    res.status(500).json({ message: "Ошибка при обновлении счёта", error: error.message });
+    console.error("Klaida atnaujinant paskyrą:", error);
+    res.status(500).json({ message: "Klaida atnaujinant paskyrą", error: error.message });
   }
 });
 
-// Удалить счёт
+
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     await pool.query("DELETE FROM invoices WHERE id = $1", [id]);
-    res.json({ message: "Счёт успешно удалён" });
+    res.json({ message: "Paskyra sėkmingai ištrinta" });
   } catch (error) {
-    console.error("Ошибка при удалении счёта:", error);
-    res.status(500).json({ message: "Ошибка при удалении счёта", error: error.message });
+    console.error("Klaida šalinant paskyrą:", error);
+    res.status(500).json({ message: "Klaida šalinant paskyrą", error: error.message });
   }
 });
 

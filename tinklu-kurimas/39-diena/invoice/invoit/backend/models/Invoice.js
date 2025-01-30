@@ -25,7 +25,7 @@ const updateInvoice = async (id, invoice) => {
 
 const deleteInvoice = async (id) => {
   await pool.query("DELETE FROM invoices WHERE id = $1", [id]);
-  return { message: "Счёт успешно удалён" };
+  return { message: "Paskyra sėkmingai ištrinta" };
 };
 
 module.exports = { getAllInvoices, createInvoice, updateInvoice, deleteInvoice };

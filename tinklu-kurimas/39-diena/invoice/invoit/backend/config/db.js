@@ -9,7 +9,7 @@ const pool = new Pool({
 });
 
 pool.connect()
-  .then(() => console.log("✅ Подключение к базе данных установлено"))
-  .catch(err => console.error("❌ Ошибка подключения:", err));
+  .then(() => console.log("✅ Užmegztas ryšys su duomenų baze"))
+  .catch(err => console.error("❌ Ryšio klaida:", err));
 
 module.exports = pool;
