@@ -11,10 +11,8 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// ✅ Добавляем маршрут для получения тикета по ID
 router.get("/:id", getTicketById);
 
-// ✅ Существующие маршруты
 router.get("/", getAllTickets);
 router.post("/", createTicket);
 router.post("/upload", upload.single("file"), uploadAvatar);

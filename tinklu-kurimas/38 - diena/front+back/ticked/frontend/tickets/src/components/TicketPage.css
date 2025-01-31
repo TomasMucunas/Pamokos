@@ -3,35 +3,9 @@
 .ticket-page {
   min-block-size: 100vh;
   inline-size: 100%;
-  background: linear-gradient(135deg, #0a051c, #1a103c, #2d1245);
   position: relative;
   overflow: hidden;
   font-family: 'JetBrains Mono', monospace;
-}
-
-.background-circles {
-  position: absolute;
-  inline-size: 100%;
-  block-size: 100%;
-}
-
-.circle-1, .circle-2 {
-  position: absolute;
-  inline-size: 800px;
-  block-size: 800px;
-  border: 3px solid #ff7b72;
-  border-radius: 50%;
-  opacity: 0.1;
-}
-
-.circle-1 {
-  inset-block-end: -200px;
-  inset-inline-start: -200px;
-}
-
-.circle-2 {
-  inset-block-start: -200px;
-  inset-inline-end: -200px;
 }
 
 .content {

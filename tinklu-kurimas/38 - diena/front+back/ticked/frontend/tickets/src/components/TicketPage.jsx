@@ -1,7 +1,11 @@
 import React from "react";
-import "./TicketPage.css"; // Стили остаются
+import { useLocation } from "react-router-dom"; // ✅ Импортируем useLocation
+import "./TicketPage.css";
 
-const TicketPage = ({ ticket }) => {
+const TicketPage = () => {
+  const location = useLocation();
+  const ticket = location.state?.ticket; // ✅ Получаем билет из navigate()
+
   if (!ticket || Object.keys(ticket).length === 0) {
     return <h2 className="error-message">No ticket found.</h2>;
   }

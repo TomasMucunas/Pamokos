@@ -21,23 +21,19 @@ app.use(express.urlencoded({ extended: true }));
 const uploadDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
-    console.log("📂 Папка `uploads` создана");
+    console.log("📂 Sukurtas aplankas `uploads`");
 }
 
-// ✅ Подключаем статические файлы
 app.use("/uploads", express.static(uploadDir));
 
-// ✅ Подключаем маршруты API
 app.use("/api/tickets", ticketRoutes);
 
-// ✅ Логируем маршруты, чтобы убедиться, что они зарегистрированы
 app._router.stack.forEach((r) => {
     if (r.route && r.route.path) {
-        console.log(`📌 Зарегистрирован маршрут: ${r.route.path}`);
+        console.log(`📌 Registruotas maršrutas: ${r.route.path}`);
     }
 });
 
-// Обработка неизвестных маршрутов
 app.use((req, res) => {
     res.status(404).json({ message: "Route not found" });
 });

@@ -7,14 +7,32 @@ body {
   align-items: center;
   block-size: 100vh;
   background: hsl(248, 70%, 10%);
-  background-image: url(./assets/images/background-desktop.png),
-                    url(./assets/images/pattern-squiggly-line-bottom-desktop.svg), 
-                    url(./assets/images/pattern-squiggly-line-top-desktop.svg);
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center, bottom left, top right;
-  background-size: cover, auto, auto;
+  background-image: 
+    url("./assets/images/pattern-squiggly-line-top.svg"),
+    url("./assets/images/pattern-squiggly-line-bottom-desktop.svg"),
+    url("./assets/images/pattern-circle.svg"), /* Pirmas ratas */
+    url("./assets/images/pattern-circle.svg"), /* Antras ratas */
+    url("./assets/images/pattern-dots.svg"),
+    url("./assets/images/pattern-lines.svg"),
+    url("./assets/images/background-desktop.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 
+    top 0 right 0,          /* Viršutinė banguota linija */
+    bottom 0 left 0,        /* Apatinė banguota linija */
+    top -25% right 90%,     /* Pirmas ratas - pakoreguota vieta */
+    bottom 40% left 72%,    /* Antras ratas - pakoreguota vieta */
+    top 10% right 10%,      /* Taškai */
+    center center,          /* Linijos */
+    center center;          /* Pagrindinis fonas */
+  background-size: 
+    25% auto,    /* Viršutinė banguota linija */
+    25% auto,    /* Apatinė banguota linija */
+    15% auto,    /* Pirmas ratas */
+    12% auto,    /* Antras ratas */
+    20% auto,    /* Taškai */
+    auto auto,   /* Linijos */
+    cover;       /* Pagrindinis fonas */
 }
-
 
 .container {
   inline-size: 600px;
@@ -54,8 +72,7 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 p {
@@ -73,6 +90,7 @@ h3 {
   padding: 0;
   text-align: start;
   font-size: 17px;
+  color: white;
 }
 
 label {
@@ -81,7 +99,6 @@ label {
   color: white;
   margin-block-start: 10px;
 }
-
 
 input {
   padding: 15px;
@@ -136,7 +153,7 @@ input::placeholder {
   block-size: 100px;
   border-radius: 20%;
   object-fit: cover;
-  border: 2px solid #ffffff8a
+  border: 2px solid #ffffff8a;
 }
 
 .remove-btn,
@@ -167,8 +184,6 @@ input::placeholder {
   text-decoration: underline;
 }
 
-
-
 button {
   margin-block-start: 15px;
   padding: 12px;
@@ -185,7 +200,6 @@ button:hover {
   background-color: #e63946;
 }
 
-
 .ticket {
   background: #222;
   padding: 20px;
@@ -201,11 +215,67 @@ button:hover {
   color: #ccc;
 }
 
-
 .ticket-avatar {
   inline-size: 120px;
   block-size: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-block-start: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-size: 
+      40% auto,    /* Viršutinė banguota linija */
+      40% auto,    /* Apatinė banguota linija */
+      20% auto,    /* Pirmas ratas */
+      15% auto,    /* Antras ratas */
+      25% auto,    /* Taškai */
+      auto auto,   /* Linijos */
+      cover;       /* Pagrindinis fonas */
+    background-position: 
+      top 0 right 10px,   /* Viršutinė banguota linija */
+      bottom 0 left 10px, /* Apatinė banguota linija */
+      top -10% right 70%, /* Pirmas ratas */
+      bottom 30% left 50%, /* Antras ratas */
+      top 5% right 5%,     /* Taškai */
+      center center,       /* Linijos */
+      center center;       /* Pagrindinis fonas */
+  }
+
+  .container {
+    inline-size: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .upload-box {
+    block-size: 100px;
+  }
+
+  .avatar-preview {
+    inline-size: 80px;
+    block-size: 80px;
+  }
 }

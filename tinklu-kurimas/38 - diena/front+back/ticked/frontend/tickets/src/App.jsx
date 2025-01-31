@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 import uploadIcon from "./assets/images/icon-upload.svg";
+
 
 const style = document.createElement("style");
 style.textContent = `
@@ -14,15 +16,8 @@ function App() {
   const [github, setGithub] = useState("");
   const [avatar, setAvatar] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [ticketGenerated, setTicketGenerated] = useState(false);
-  const [ticketData, setTicketData] = useState(null); // Храним созданный билет
   const [errors, setErrors] = useState({});
-
-  useEffect(() => {
-    if (!avatar) {
-      setErrors((prevErrors) => ({ ...prevErrors, avatar: "Upload an image first!" }));
-    }
-  }, [avatar]);
+  const navigate = useNavigate();
 
   const validate = () => {
     let newErrors = {};
@@ -46,7 +41,7 @@ function App() {
       avatarUrl: avatar,
     };
 
-    console.log("Отправляемые данные:", ticketInfo);
+    console.log("Siunčiami duomenys:", ticketInfo);
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/tickets`, {
@@ -61,13 +56,14 @@ function App() {
       }
 
       const data = await response.json();
-      console.log("✅ Тикет создан:", data);
-      
-      setTicketData(data.data); // Сохраняем билет
-      setTicketGenerated(true); // Показываем билет
+      console.log("✅ Sukurtas bilietas:", data);
+
+      // 🔥 Переадресация на страницу билета
+      navigate("/ticket", { state: { ticket: data.data } });
+
     } catch (error) {
       setErrors((prevErrors) => ({ ...prevErrors, form: error.message }));
-      console.error("❌ Ошибка при создании тикета:", error);
+      console.error("❌ Klaida kuriant bilietą:", error);
     }
   };
 
@@ -75,7 +71,7 @@ function App() {
     const file = e.target.files[0];
     if (!file) return;
 
-    console.log("📂 Выбранный файл:", file);
+    console.log("📂 Pasirinktas failas:", file);
 
     if (file.size > 500 * 1024) {
       setErrors((prevErrors) => ({ ...prevErrors, avatar: "File too large. Upload under 500KB." }));
@@ -90,7 +86,7 @@ function App() {
 
     const apiUrl = import.meta.env.VITE_API_URL;
     if (!apiUrl) {
-      console.error("❌ Ошибка: VITE_API_URL не определён в .env");
+      console.error("❌ Klaida: VITE_API_URL neapibrėžtas .env");
       setErrors((prevErrors) => ({ ...prevErrors, avatar: "Internal error: API URL missing" }));
       return;
     }
@@ -100,7 +96,7 @@ function App() {
     formData.append("file", file);
 
     const uploadUrl = `${apiUrl}/api/tickets/upload`;
-    console.log("📤 Отправка файла на сервер:", uploadUrl);
+    console.log("📤 Failo siuntimas į serverį:", uploadUrl);
 
     try {
       const response = await fetch(uploadUrl, {
@@ -113,42 +109,17 @@ function App() {
       }
 
       const data = await response.json();
-      console.log("✅ Файл загружен, URL:", data.url);
+      console.log("✅ Įkeltas failas, URL:", data.url);
 
       setAvatar(data.url);
       setErrors((prevErrors) => ({ ...prevErrors, avatar: "" }));
     } catch (error) {
-      console.error("❌ Ошибка загрузки изображения:", error.message);
+      console.error("❌ Paveikslėlio įkėlimo klaida:", error.message);
       setErrors((prevErrors) => ({ ...prevErrors, avatar: error.message || "Upload failed" }));
     } finally {
       setLoading(false);
     }
   };
-
-  if (ticketGenerated && ticketData && Object.keys(ticketData).length > 0) {
-    return (
-      <div className="ticket-container">
-        <h1>Congrats, {ticketData.full_name || "Guest"}!</h1>
-        <p>Your ticket is ready.</p>
-        <p>We've emailed your ticket to {ticketData.email || "your email"}.</p>
-        
-        <div className="ticket">
-          <h2>Coding Conf</h2>
-          <p>Jan 31, 2025 / Austin, TX</p>
-          
-          {ticketData.avatar_url ? (
-            <img src={ticketData.avatar_url} alt="User Avatar" className="ticket-avatar" />
-          ) : (
-            <p>No Avatar Uploaded</p>
-          )}
-          
-          <p>{ticketData.full_name || "No Name"}</p>
-          <p>{ticketData.github_username || "@unknown"}</p>
-        </div>
-      </div>
-    );
-  }
-  
 
   return (
     <div className="container">
