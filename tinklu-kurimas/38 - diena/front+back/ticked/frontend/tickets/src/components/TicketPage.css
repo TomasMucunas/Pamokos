@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+.ticket-page {
+  min-block-size: 100vh;
+  inline-size: 100%;
+  background: linear-gradient(135deg, #0a051c, #1a103c, #2d1245);
+  position: relative;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.background-circles {
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.circle-1, .circle-2 {
+  position: absolute;
+  inline-size: 800px;
+  block-size: 800px;
+  border: 3px solid #ff7b72;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.circle-1 {
+  inset-block-end: -200px;
+  inset-inline-start: -200px;
+}
+
+.circle-2 {
+  inset-block-start: -200px;
+  inset-inline-end: -200px;
+}
+
+.content {
+  max-inline-size: 800px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-block-end: 48px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-block-end: 32px;
+}
+
+.logo-square {
+  inline-size: 32px;
+  block-size: 32px;
+  background-color: #ff7b72;
+  transform: rotate(45deg);
+  border-radius: 8px;
+}
+
+.logo span {
+  color: white;
+  font-size: 20px;
+}
+
+.title {
+  color: white;
+}
+
+.title h1 {
+  font-size: 48px;
+  margin-block-end: 16px;
+}
+
+.title h1 span {
+  color: #ff7b72;
+}
+
+.title h2 {
+  font-size: 40px;
+  margin-block-end: 24px;
+}
+
+.title p {
+  color: #9ca3af;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.title p span {
+  color: #ff7b72;
+}
+
+.ticket {
+  background: linear-gradient(to right, #2a2438, #352b47);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  color: white;
+}
+
+.ticket-notch {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 32px;
+  block-size: 64px;
+  background-color: #0a051c;
+  border-radius: 32px 0 0 32px;
+}
+
+.ticket-header {
+  margin-block-end: 24px;
+}
+
+.ticket-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-block-end: 16px;
+}
+
+.ticket-logo-square {
+  inline-size: 24px;
+  block-size: 24px;
+  background-color: #ff7b72;
+  transform: rotate(45deg);
+  border-radius: 6px;
+}
+
+.ticket-date {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.ticket-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-image {
+  inline-size: 64px;
+  block-size: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile-image img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.profile-info h3 {
+  font-size: 20px;
+  margin-block-end: 4px;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.at-symbol {
+  inline-size: 16px;
+  block-size: 16px;
+  background-color: #ff7b72;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.ticket-number {
+  position: absolute;
+  inset-block-start: 24px;
+  inset-inline-end: 48px;
+  color: #4b5563;
+  transform: rotate(90deg);
+  transform-origin: right;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .title h1 {
+    font-size: 36px;
+  }
+  
+  .title h2 {
+    font-size: 30px;
+  }
+  
+  .title p {
+    font-size: 16px;
+  }
+}
