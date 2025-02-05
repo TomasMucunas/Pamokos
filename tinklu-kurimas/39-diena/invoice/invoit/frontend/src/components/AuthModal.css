@@ -1,0 +1,82 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 10px;
+    inline-size: 350px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    block-size: 300px;
+  }
+  
+  /* Кнопка закрытия (X) */
+  .close-btn {
+    position: absolute;  /* Добавляем абсолютное позиционирование */
+    inset-block-start: 10px;
+    inset-inline-end: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
+    max-inline-size: 1.2cm;
+    background-color: aliceblue;
+  }
+  
+  /* Добавляем hover-эффект, если нужно */
+  .close-btn:hover {
+    opacity: 0.7;
+  }
+  
+  .modal-content h2 {
+    margin-block-end: 15px;
+  }
+  
+  .modal-content input {
+    inline-size: 95%;
+    padding: 10px;
+    margin-block-end: 10px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 5px;
+  }
+  
+  .modal-content button {
+    inline-size: 100%;
+    padding: 10px;
+    border: none;
+    background: var(--purple);
+    color: white;
+    cursor: pointer;
+    border-radius: 50px;
+    /* margin-block-start: 25px; */
+  }
+  
+  .modal-content button:hover {
+    background: var(--purple-dark);
+  }
+  
+  .error {
+    color: greenyellow;
+    font-size: 16px;
+  }
+  
+  .toggle-auth {
+    margin-block-start: 10px;
+  }
+  
+  .toggle-auth button {
+    background: none;
+    border: none;
+    color: var(--purple);
+    cursor: pointer;
+  }
+  

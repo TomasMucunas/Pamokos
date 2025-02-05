@@ -132,8 +132,8 @@ body {
 
 .filter-options {
   position: absolute;
-  top: 110%;
-  left: 0;
+  inset-block-start: 110%;
+  inset-inline-start: 0;
   background-color: var(--bg-secondary);
   border-radius: 8px;
   padding: 0.5rem;
