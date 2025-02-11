@@ -12,22 +12,31 @@ function Navbar({ toggleTheme, isDarkTheme }) {
       <nav className="navbar">
         <div className="logo-container">
           <div className="logo">
-            <img src="./logo.png" alt="Logo" />
+            {/* <img src="./logo.png" alt="Logo" /> */}
           </div>
         </div>
 
         <div className="nav-bottom">
-          <button className="theme-toggle" onClick={toggleTheme} aria-label="Switch theme">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Switch theme"
+          >
             {isDarkTheme ? "🌙" : "☀️"}
           </button>
 
           {user ? (
             <>
-              <span className="username">👤 {user.username}</span>
-              <button className="logout-btn" onClick={logout}>Get out</button>
+              <span className="username"> {user.username}</span>
+
+              <button className="logout-btn" onClick={logout}>
+                Get out
+              </button>
             </>
           ) : (
-            <button className="nav-link" onClick={() => setAuthModalOpen(true)}>Login / Registr</button>
+            <button className="nav-link" onClick={() => setAuthModalOpen(true)}>
+              Login / Registr
+            </button>
           )}
 
           <div className="avatar">
@@ -36,7 +45,10 @@ function Navbar({ toggleTheme, isDarkTheme }) {
         </div>
       </nav>
 
-      <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+      />
     </>
   );
 }

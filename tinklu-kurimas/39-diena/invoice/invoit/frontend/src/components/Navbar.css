@@ -1,79 +1,150 @@
 .navbar {
-    inline-size: 103px;
-    background-color: var(--bg-secondary);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  inline-size: 103px;
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  block-size: 100vh;
+  position: fixed;
+  border-radius: 0 20px 20px 0;
+}
+
+.logo-container {
+  background-color: var(--purple);
+  padding: 16px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding: 32px;
+  border-block-start: 1px solid var(--text-secondary);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  inline-size: 50px;
+  block-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  transform: rotate(45deg);
+}
+
+.theme-toggle svg {
+  inline-size: 24px;
+  block-size: 24px;
+  color: var(--text-primary);
+  fill: currentColor;
+}
+
+.dark-theme .navbar {
+  background-color: var(--bg-secondary-dark);
+}
+
+.light-theme .navbar {
+  background-color: var(--bg-secondary-light);
+  border-inline-end: 1px solid var(--text-secondary-light);
+}
+
+.nav-link {
+  background: var(--purple);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  inline-size: 2.5cm;
+}
+
+.nav-link:hover {
+  background: var(--purple-dark);
+}
+
+.profile-container {
+  display: flex;           
+  justify-content: center; 
+  align-items: center;    
+  block-size: 100vh;
+  ;     
+}
+
+.username {
+  font-size: 0.5cm 
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    inline-size: 80px;
     block-size: 100vh;
-    position: fixed;
-    border-radius: 0 20px 20px 0;
   }
-  
- 
-  .logo-container {
-    background-color: var(--purple);
-    padding: 16px;
-    border-radius: 0 20px 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
 
   .nav-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 32px; 
-    align-items: center;
-    padding: 32px; 
-    border-block-start: 1px solid var(--text-secondary);
+    padding: 16px;
+    gap: 16px;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    inline-size: 100%;
+    block-size: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0;
+    position: relative;
+  }
+
+  .logo-container {
+    padding: 8px;
+    border-radius: 0;
+  }
+
+  .nav-bottom {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+    border-block-start: none;
+  }
+
   .theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s;
-    inline-size: 50px;
-    block-size: 50px;
-    display: flex;
+    inline-size: 40px;
+    block-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
   }
-  
-  .theme-toggle:hover {
-    transform: rotate(45deg);
+
+  .nav-bottom {
+    flex-direction: column;
+    gap: 8px;
   }
-  
-  .theme-toggle svg {
-    inline-size: 24px;
-    block-size: 24px;
-    color: var(--text-primary);
-    fill: currentColor;
-  }
-  
-  
-  .dark-theme .navbar {
-    background-color: var(--bg-secondary-dark);
-  }
-  
-  .light-theme .navbar {
-    background-color: var(--bg-secondary-light);
-    border-inline-end: 1px solid var(--text-secondary-light);
+
+  .theme-toggle {
+    inline-size: 35px;
+    block-size: 35px;
   }
 
   .nav-link {
-    background: var(--purple);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    inline-size: 2.5cm;
+    inline-size: auto;
+    padding: 8px 12px;
   }
-  
-  .nav-link:hover {
-    background: var(--purple-dark);
-  }
-  
+}

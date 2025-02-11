@@ -18,9 +18,9 @@
     block-size: 300px;
   }
   
-  /* Кнопка закрытия (X) */
+ 
   .close-btn {
-    position: absolute;  /* Добавляем абсолютное позиционирование */
+    position: absolute; 
     inset-block-start: 10px;
     inset-inline-end: 15px;
     background: none;
@@ -32,7 +32,7 @@
     background-color: aliceblue;
   }
   
-  /* Добавляем hover-эффект, если нужно */
+  
   .close-btn:hover {
     opacity: 0.7;
   }

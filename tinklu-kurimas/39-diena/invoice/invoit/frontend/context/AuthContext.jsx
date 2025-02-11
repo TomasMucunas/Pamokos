@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // Проверяем авторизацию при загрузке
+  
   useEffect(() => {
     fetch("http://localhost:5000/api/auth/me", { credentials: "include" })
       .then((res) => res.json())
@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
       .catch(() => setUser(null));
   }, []);
 
-  // Функция входа
+ 
   const login = async (credentials) => {
     const res = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
@@ -26,7 +26,6 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
-  // Функция регистрации
   const signup = async (credentials) => {
     const res = await fetch("http://localhost:5000/api/auth/signup", {
       method: "POST",
@@ -39,7 +38,7 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
-  // Функция выхода
+  
   const logout = async () => {
     await fetch("http://localhost:5000/api/auth/logout", {
       method: "POST",

@@ -1,4 +1,4 @@
-require("dotenv").config(); // Загружаем переменные среды
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const pool = require("./config/db");
@@ -7,15 +7,15 @@ const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
 
 
-// Проверяем, загружается ли JWT_SECRET
+
 if (!process.env.JWT_SECRET) {
-    console.error("❌ Ошибка: JWT_SECRET не задан в .env файле!");
+    console.error("❌ Klaida: JWT_SECRET nėra apibrėžta .env faile!");
     process.exit(1);
 }
 
 const app = express();
 
-// CORS для правильной работы с браузером
+
 app.use(cors({
     origin: ["http://localhost:3000", "http://localhost:5173"],
     credentials: true,
@@ -25,11 +25,10 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-// Подключаем маршруты
 app.use("/api/invoices", invoiceRoutes);
 app.use("/api/auth", authRoutes);
 
-// Создание таблицы users, если её нет
+
 const createUsersTable = async () => {
     try {
         await pool.query(`
@@ -40,14 +39,14 @@ const createUsersTable = async () => {
                 password TEXT NOT NULL
             );
         `);
-        console.log("✅ Таблица users проверена или создана");
+        console.log("✅ Patikrinta arba sukurta naudotojų lentelė");
     } catch (error) {
-        console.error("❌ Ошибка при создании таблицы users:", error);
+        console.error("❌ Klaida kuriant naudotojų lentelę:", error);
     }
 };
 
 createUsersTable();
 
-console.log("🔍 JWT_SECRET загружен:", process.env.JWT_SECRET);
+console.log("🔍 JWT_SECRET įkeltas:", process.env.JWT_SECRET);
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`✅ Сервер работает на порту ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Serveris veikia per prievadą ${PORT}`));

@@ -1,16 +1,13 @@
 :root {
- 
   --bg-main-dark: #141625;
   --bg-secondary-dark: #1e2139;
   --text-primary-dark: #ffffff;
   --text-secondary-dark: #dfe3fa;
-
   
   --bg-main-light: #cfcfcf;
   --bg-secondary-light: #ffffff;
   --text-primary-light: #0c0e16;
   --text-secondary-light: #888eb0;
-
 
   --purple: #7c5dfa;
   --purple-light: #9277ff;
@@ -18,7 +15,6 @@
   --pending: #ff8f00;
   --draft: #373b53;
 }
-
 
 .dark-theme {
   --bg-main: var(--bg-main-dark);
@@ -44,6 +40,7 @@ body {
 .layout {
   min-block-size: 100vh;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .navbar {
@@ -78,9 +75,14 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   margin-block-end: 2rem;
+  max-width: 93%;
+  position: sticky;
+  inset-block-start: 0;
+  background-color: var(--bg-main);
+  padding: 1rem;
 }
 
 .header-left {
@@ -103,12 +105,12 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
 }
 
 .filter-dropdown {
   position: relative;
 }
-
 
 .filter-btn {
   background: none;
@@ -129,7 +131,6 @@ body {
   background-color: #53448b;
 }
 
-
 .filter-options {
   position: absolute;
   inset-block-start: 110%;
@@ -143,7 +144,6 @@ body {
   z-index: 10;
 }
 
-
 .filter-option {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
@@ -156,7 +156,6 @@ body {
   border-radius: 6px;
 }
 
-
 .filter-option.checked {
   background-color: var(--purple);
   color: white;
@@ -166,7 +165,6 @@ body {
 .filter-option:hover {
   background-color: var(--purple-light);
 }
-
 
 .new-invoice-btn {
   background-color: var(--purple);
@@ -198,7 +196,6 @@ body {
   font-size: 1rem;
 }
 
-
 button {
   background-color: var(--purple);
   border: none;
@@ -218,7 +215,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  inline-size: 100%;
 }
 
 .invoice-item {
@@ -261,7 +257,6 @@ button:hover {
 .paid .status-dot {
   background-color: var(--paid);
 }
-
 .pending {
   background-color: rgba(255, 143, 0, 0.1);
   color: var(--pending);
@@ -269,11 +264,85 @@ button:hover {
 .pending .status-dot {
   background-color: var(--pending);
 }
-
 .draft {
   background-color: rgba(55, 59, 83, 0.1);
   color: var(--draft);
 }
 .draft .status-dot {
   background-color: var(--draft);
+}
+
+.burger-menu {
+  display: none;
+  font-size: 2rem;
+}
+
+
+@media (max-width: 1024px) {
+  .navbar {
+    inline-size: 70px;
+  }
+
+  .main-content {
+    padding: 1rem;
+    margin-inline-start: 5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    order: -1;
+    margin-block-start: 1rem;
+    inline-size: 100%;
+  }
+
+  .invoices-list {
+    flex-direction: column;
+  }
+
+  .invoice-item {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .new-invoice-btn, .filter-btn {
+    inline-size: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .main-content {
+    margin-inline-start: 0;
+    padding: 1rem;
+  }
+
+  .header-left h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-left p {
+    font-size: 0.8rem;
+  }
+
+  .filter-dropdown {
+    inline-size: 100%;
+    text-align: center;
+  }
+
+  .burger-menu {
+    display: block;
+    position: absolute;
+    inset-block-start: 20px;
+    inset-inline-start: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
 }
