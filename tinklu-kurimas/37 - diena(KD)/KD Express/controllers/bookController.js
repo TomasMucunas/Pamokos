@@ -81,13 +81,13 @@ exports.selectBook = async (req, res) => {
         const { id } = req.body;
 
         if (!id) {
-            return res.status(400).json({ message: 'Не указан ID книги' });
+            return res.status(400).json({ message: 'Knygos ID nenurodytas' });
         }
 
         const result = await pool.query('SELECT * FROM books WHERE id = $1', [id]);
 
         if (result.rows.length === 0) {
-            return res.status(404).json({ message: 'Книга не найдена' });
+            return res.status(404).json({ message: 'Knyga nerasta' });
         }
 
         res.status(200).json(result.rows[0]);
