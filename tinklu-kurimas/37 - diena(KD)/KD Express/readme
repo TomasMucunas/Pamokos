@@ -1,72 +1,70 @@
-Задача: система управления книгами и авторами Express.js
-Цель
-Разработать систему управления книгами и авторами на базе Express.js, включающую:
+Užduotis: Express.js knygų ir autorių valdymo sistema
+Tikslas
+Sukurti knygų ir autorių valdymo sistemą, paremtą Express.js, įskaitant:
 
-CRUD-функциональность для книг и авторов.
-Авторизацию с функциями регистрации, входа и контроля доступа.
-Валидация данных (проверка данных о книгах и авторах).
-Управление ошибками (с подробными ответами на ошибки).
-Взаимосвязь между книгами и авторами, чтобы у каждой книги был свой автор, а у автора могло быть несколько книг.
-Требования
-Технология:
+CRUD funkcijas knygoms ir autoriams.
+Autorizavimas su registracijos, prisijungimo ir prieigos kontrolės funkcijomis.
+Duomenų patvirtinimą (knygų ir autorių duomenų tikrinimą).
+Klaidų valdymas (su išsamiais atsakymais į klaidas).
+Knygų ir autorių tarpusavio ryšys, kad kiekviena knyga galėtų turėti savo autorių, o autorius - kelias knygas.
+Reikalavimai
+Technologijos:
 
-Node.js с Express.js.
+Node.js su Express.js.
 PostgreSQL.
-Авторизация: токен JWT, cookies.
-Валидация: использование библиотекиexpress-validator.
-Управление ошибками: централизованное управление ошибками с соответствующими кодами состояния HTTP и сообщениями о том, какая ошибка произошла.
-Модель/таблица книги:
+Autorizacija: JWT simbolis, slapukai.
+Patvirtinimas: validatoriaus bibliotekos naudojimas.
+Klaidų valdymas: centralizuotas klaidų valdymas su atitinkamais HTTP būsenos kodais ir pranešimais apie tai, kokia klaida įvyko.
+Knygos modelis / lentelė:
 
-название (строка, обязательно, не менее 3 символов).
-краткое содержание (строка, необязательно).
-isbn (уникальная строка, обязательная, 10 цифр, не может содержать пробелы или специальные символы, может содержать ведущие тире «-», не может содержать буквы, только цифры).
-authorId (ссылка на идентификатор автора, обязательно).
-Модель/таблица автора:
+pavadinimas (eilutė, neprivaloma, ne mažiau kaip 3 ženklai).
+santrauka (eilutė, neprivaloma).
+isbn (unikali eilutė, privaloma, 10 skaitmenų, negali būti tarpų ar specialiųjų ženklų, gali būti pradinis brūkšnys „-“, negali būti raidžių, tik skaitmenys).
+authorId (nuoroda į autoriaus identifikatorių, privaloma).
+Autoriaus modelis / lentelė:
 
-имя (строка, обязательно, не менее 2 символов).
-дата рождения (дата, обязательная, формат YYYY-MM-DD).
-биография (строка, необязательно, не более 150 символов).
-Модель/таблица пользователя (для авторизации):
+name (eilutė, privaloma, ne mažiau kaip 2 ženklai).
+gimimo data (data, privaloma, formatas YYYYYY-MM-DD).
+biografija (eilutė, neprivaloma, ne daugiau kaip 150 simbolių).
+Naudotojo modelis / lentelė (autorizacijai):
 
-имя пользователя (уникальная строка, обязательно).
-пароль (хэшированная строка, обязательно).
-роль ('пользователь', 'администратор').
-Функциональность
-Авторизация:
+naudotojo vardas (unikali eilutė, privaloma).
+slaptažodis (slaptažodžių eilutė, privaloma).
+vaidmuo („naudotojas“, „administratorius“).
+Funkcionalumas
+Leidimas:
 
-Регистрация (POST /auth/register): создание нового пользователя. ** 1 балл **.
-Вход (POST /auth/login): генерация JWT только после входа в систему. ** 2 балла **
-Только пользователи с ролью администратора могут создавать, обновлять и удалять авторов или книги. ** 2 балла **
-CRUD-операции:
+Registracija (POST /auth/register): naujo naudotojo sukūrimas. ** 1 balas **.
+Prisijungimas (POST /auth/login): JWT generavimas tik po prisijungimo. ** 2 balai **.
+Tik administratoriaus vaidmenį turintys naudotojai gali kurti, atnaujinti ir ištrinti autorius arba knygas. ** 2 taškai **.
+CRUD operacijos:
 
-Авторы:
-GET /authors: Получение списка всех авторов. ** 0,5 балла **
-GET /authors/:id: Получение информации об авторе по его ID. ** 0,5 балла **
-POST /authors: Создать нового автора (только для администраторов). ** 0,5 балла **
-PATCH /authors/:id: обновление информации об авторе (только для администраторов). ** 0,5 балла **
-DELETE /authors/:id: удаление автора (только для администраторов). ** 0,5 балла **
-Книги:
-GET /books: Получить список всех книг. ** 0,5 балла **
-GET /books/:id: Получить информацию о книге по идентификатору. ** 0,5 балла **
-POST /books: Создать новую книгу (только для администраторов). ** 0,5 балла **
-PATCH /books/:id: Обновление информации о книге (только для администраторов). ** 0,5 балла **
-DELETE /books/:id: удалить книгу (только для администраторов). ** 0,5 балла **
-Подключения к БД:
+Autoriai:
+GET /authors: Gauti visų autorių sąrašą. ** 0,5 taško **
+GET /authors/:id: gauti informaciją apie autorius pagal autoriaus ID. ** 0,5 taško **
+POST /authors: Sukurti naują autorių (tik administratoriams). ** 0,5 taško **
+PATCH /authors/:id: Atnaujinti informaciją apie autorių (tik administratoriams). ** 0,5 taško **
+DELETE /authors/:id: ištrinti autorių (tik administratoriams). ** 0,5 taško **
+Knygos:
+GET /books: gauti visų knygų sąrašą. ** 0,5 taško ** 0,5 taško ** 0,5 taško **
+GET /books/:id: gauti informaciją apie knygą pagal ID. ** 0,5 taško ** 0,5 taško ** 0,5 taško **
+POST /books: Sukurti naują knygą (tik administratoriui). ** 0,5 taško ** 0,5 taško ** 0,5 taško
+PATCH /books/:id: Atnaujinti knygos informaciją (tik administratoriams). ** 0,5 taško **
+DELETE /books/:id: ištrinti knygą (tik administratoriams). ** 0,5 taško **
+DB jungtys:
 
-При создании книги необходимо указать ID автора. Если автор не существует, система должна вернуть ошибку. ** 1 балл **
-Запросы к книгам (GET /books и GET /books/:id) должны возвращать информацию о книге с полной информацией об авторе. ** 2 балла ** - Запросы к авторам (GET /authors и GET /authors/:id) должны возвращать информацию об авторе со списком его книг. ** 2 балла **
-Поиск и фильтрация:
+Kuriant knygą turi būti nurodytas autoriaus ID. Jei autorius neegzistuoja, sistema turėtų grąžinti klaidą. ** 1 balas **
+Užklausos knygoms (GET /books ir GET /books/:id) turėtų grąžinti knygos informaciją su visa autoriaus informacija. ** 2 balai ** - Užklausos autoriams (GET /authors ir GET /authors/:id) turėtų grąžinti informaciją apie autorių su jo knygų sąrašu. ** 2 balai **
+Paieška ir filtravimas:
 
-Возможность поиска книг по названию, когда поисковая фраза находится в названии книги, но не обязательно в полном названии (GET /books?title=...). ** 2 балла **
-Фильтрация по автору, выбор книг определенного автора (GET /books?authorId=...). ** 2 балла **
-Пагинация:
+Galimybė ieškoti knygų pagal pavadinimą, kai paieškos frazė yra knygos pavadinime, bet nebūtinai visas pavadinimas (GET /books?==...). ** 2 balai **
+Filtravimas pagal autorių, pasirenkant konkretaus autoriaus knygas (GET /books?authorId=...). ** 2 balai **
+Puslapių žymėjimas:
 
-Реализовать пагинацию в списке книг (GET /books?page=1&limit=10). ** 1 балл**.
-Презентация:
-Отправьте код на ссылку github на платформе команды, к заданию.
+Knygų sąraše įgyvendinkite puslapiavimą (GET /books?page=1&limit=10). ** 1 balas**.
+Pristatymas:
+Pateikite kodą komandos platformoje esančioje „github“ nuorodoje, prie užduoties.
 
-Отправьте конечные точки для тестирования в postman, экспортируйте и прикрепите файл из postman в teams.
+Pateikite galinius taškus į postman testavimui, eksportuokite ir pridėkite failą iš postman komandoms.
 
-Общая возможная оценка составляет 20 баллов, что эквивалентно 10 баллам.
-
-Переведено с помощью DeepL.com (бесплатная версия)
+Bendras galimas įvertinimas yra 20 taškų, tai atitinka 10 balų.
